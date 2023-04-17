@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './Utils/Theme';
-import { ThemeProvider } from 'react-bootstrap';
+import { ThemeProvider } from '@emotion/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
