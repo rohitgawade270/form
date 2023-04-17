@@ -18,6 +18,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Image from 'mui-image'
 import Form from '../pages/Form';
+import Booking from '../pages/Booking';
 
 const drawerWidth = 240;
 
@@ -178,7 +179,7 @@ export default function Navbar() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Form />
+    <Booking />
       </Box>
     </Box>
   );
