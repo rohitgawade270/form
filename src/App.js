@@ -7,9 +7,6 @@ function App() {
   return (
     <>
   <Navbar />
-  <p>lorem230
-
-  </p>
     </>
   );
 }
