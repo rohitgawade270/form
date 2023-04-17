@@ -1,14 +1,15 @@
-import { createTheme } from "@mui/material";
+// import { createTheme } from "@mui/material";
 
 
-const theme = createTheme({
-    typography: {
-      allVariants: {
-       fontFamily:"Poppins,   sans-serif"
-      },
-    },
-  });
+// const theme = createTheme({
+//     typography: {
+//       allVariants: {
+//        fontFamily:"Poppins"
+      
+//       },
+//     },
+//   });
 
-  export default theme;
+//   export default theme;
   
   
