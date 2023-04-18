@@ -49,14 +49,14 @@ export default function GI_Tab() {
                             ))}
                         </TextField>
                     </Grid>
-                    <Grid item md={2} >
-                        <Button variant="success" style={{ fontSize: '14px' }} className='w-100' size='md'>Save</Button>
+                    <Grid item  >
+                        <Button variant="success" style={{ fontSize: '12px' }}  size='md'>Save</Button>
                     </Grid>
-                    <Grid item md={2}>
-                        <Button variant="success" style={{ fontSize: '14px' }} className='w-100' size='md'>Save as New</Button>
+                    <Grid item >
+                        <Button variant="success" style={{ fontSize: '12px' }}  size='md'>Save as New</Button>
                     </Grid>
-                    <Grid item md={2}>
-                        <Button variant="success" style={{ fontSize: '14px' }} className='w-100' size='md'>Cancel</Button>
+                    <Grid item >
+                        <Button variant="success" style={{ fontSize: '12px' }}  size='md'>Cancel</Button>
                     </Grid>
                 </Grid>
             </Box>
