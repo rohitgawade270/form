@@ -5,7 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import styled from '@emotion/styled';
-import { Tabs } from '@mui/material';
+import { Tabs } from '@mui/material/';
 import GI_Tab from './GI_Tab';
 import LD_Tab from './LD_Tab';
 import RU_Tab from './RU_Tab';
