@@ -7,179 +7,140 @@ function BookingInputs() {
     <Box>
       <Grid container spacing={2}>
         <Grid item>
-          <Typography sx={{ }}>Booking No</Typography>
+         
           <TextField
             size="small"
             id="booking-no"
-            variant="outlined"
+            variant="standard"
+           label="Booking No"
             sx={{
               width: "9.5rem",
               marginTop: "0.3rem",
-                "& .MuiInputLabel-root": { color: "green" }, //styles the label
-                "& .MuiOutlinedInput-root": {
-                  "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-                },
+              
             }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{ }}>Booking Date</Typography>
           <TextField
-            variant="outlined"
+           variant="standard"
             size="small"
             id="booking-date"
+            label="Booking Date"
             sx={{ width: "9.5rem", marginTop: "0.3rem",
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            }, }}
+            }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{}}>Customer</Typography>
           <TextField
-            variant="outlined"
+            variant="standard"
             size="small"
             id="customer"
+            label="Customer"
             sx={{ width: "9.5rem", marginTop: "0.3rem",
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            }, }}
+          }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{ }}>Loading Port</Typography>
           <TextField
-            variant="outlined"
+           variant="standard"
             size="small"
             id="loading-port"
+            label="Loading Port"
             sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            },}}
+         }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{  }}>FPD</Typography>
           <TextField
-            variant="outlined"
+            variant="standard"
             size="small"
             id="fpd"
+            label="FPD"
             sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            },}}
+       }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{  }}>Commodity</Typography>
           <TextField
-            variant="outlined"
+           variant="standard"
             size="small"
             id="commodity"
+            label="Commodity"
             sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            },}}
+        }}
           />
         </Grid>
         <Grid item>
-          <Typography sx={{}}>Commodity Category</Typography>
           <TextField
-            variant="outlined"
+           variant="standard"
             size="small"
             id="commodity-category"
+            label="Commodity Category"
             sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-            },}}
+        }}
           />
         </Grid>
         
           <Grid item sx={{   }}>
-            <Typography sx={{}}>Vessel Voyage</Typography>
             <TextField
-              variant="outlined"
+             variant="standard"
               size="small"
               id="vessel-voyage"
+              label="Vessel Voyage"
               sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              },}}
+          }}
             />
           </Grid>
           <Grid item sx={{   }}>
-            <Typography sx={{}}>Booking Date</Typography>
             <TextField
-              variant="outlined"
+             variant="standard"
               size="small"
               id="booking-date"
+              label="Booking Date"
               sx={{ width: "9.5rem", marginTop: "0.3rem",
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              }, }}
+            }}
             />
           </Grid>
           <Grid item>
-            <Typography sx={{}}>Line</Typography>
             <TextField
-              variant="outlined"
+              variant="standard"
               size="small"
               id="line"
+              label="Line"
               sx={{ width: "9.5rem", marginTop: "0.3rem" ,
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              },}}
+       }}
             />
           </Grid>
           <Grid item>
-            <Typography sx={{}}>Inventory</Typography>
             <TextField
-              variant="outlined"
+             variant="standard"
               size="small"
               id="inventory"
+              label="Inventory"
               sx={{ width: "9.5rem", marginTop: "0.3rem",
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              }, }}
+             }}
             />
           </Grid>
           <Grid item>
-            <Typography sx={{}}>Status</Typography>
             <TextField
-              variant="outlined"
+             variant="standard"
               size="small"
               id="status"
+              label="Status"
               sx={{ width: "9.5rem", marginTop: "0.3rem",
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              }, }}
+           }}
             />
           </Grid>
           <Grid item sx={{  }}>
-          <Typography sx={{}}>Remarks</Typography>
             <TextField
-              variant="outlined"
+              variant="standard"
               size="small"
               id="remarks"
+              label="Remarks"
               sx={{ width: "20rem", marginTop: "0.3rem",
-              "& .MuiInputLabel-root": { color: "green" }, //styles the label
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { border:"1px solid", borderRadius:"0.5rem"},
-              }, }}
+        }}
             />
           </Grid>
-       
       </Grid>
     </Box>
   );
