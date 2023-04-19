@@ -10,7 +10,7 @@ export default function RU_Tab() {
   return (
     <>
       <Box>
-        <Button variant='success' size="sm">Save</Button>
+      <Button variant="success" className='fs-12' size='sm'>Save</Button>
       </Box>
       <Box sx={{ marginTop: 2 }}>
         <Grid container spacing={2}>

@@ -50,7 +50,7 @@ export default function RI_Box({ data }) {
                             <TextField variant='standard' label='Number of Containers' />
                         </Grid>
                         <Grid item alignSelf='end' sm={4}>
-                            <Button variant='success' size='sm'>Add</Button>
+                            <Button variant='success' className='fs-12' size='sm'>Add</Button>
                         </Grid>
                     </Grid>
                 </Paper>

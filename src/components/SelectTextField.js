@@ -1,6 +1,5 @@
-import { InputLabel, MenuItem, TextField } from '@mui/material'
+import {  MenuItem, TextField } from '@mui/material'
 import React from 'react'
-import { LightBox } from '../Utils/Theme'
 
 export default function SelectTextField({data,value,labelText}) {
     return (

@@ -40,10 +40,10 @@ export default function GI_Tab() {
                         <Typography sx={{ fontWeight: 600 }}>Booking Type</Typography>
                     </Grid>
                     <Grid item >
-                        <DropdownButton style={{ fontSize: '12px' }} id="export-btn" title="Export FCL" size="sm" variant='secondary'>
-                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        <DropdownButton id="export-btn" title="Export FCL" size="sm" variant='secondary'>
+                            <Dropdown.Item className='fs-12' href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item className='fs-12' href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item className='fs-12' href="#/action-3">Something else</Dropdown.Item>
                         </DropdownButton>
                     </Grid>
                     <Grid item  >

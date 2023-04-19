@@ -9,8 +9,8 @@ export default function PortInfo({port}) {
       <Grid item xs={4}>
         <TextField variant='standard' label="Vessel Voyage" size="small" />
       </Grid>
-      <Grid item xs={6}>
-        <TextField variant='filled' label="Terminal" size="small" />
+      <Grid item xs={8}>
+        <TextField variant='filled' fullWidth label="Terminal" size="small" />
       </Grid>
       <Grid item xs={4}>
         <TextField variant='filled' label="Cut-off Date" size="small" />

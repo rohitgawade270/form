@@ -1,95 +1,141 @@
 import React from "react";
-import { Button, TextField, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import InputLabel from "@mui/material/InputLabel";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-
-const GreyBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#f2f2f2",
-  padding: theme.spacing(2),
-}));
+import { Button } from "react-bootstrap";
+import { Grid, Paper, TextField, Typography, Box, InputAdornment, IconButton } from '@mui/material'
+import SelectTextField from "./SelectTextField";
+import { Search } from "@mui/icons-material";
 
 export default function LD_Tab() {
+
+  const data = [
+    {
+        value: 'select',
+        label: 'select an option'
+    },
+    {
+        value: 'FireQube',
+        label: 'FireQube',
+    },
+    {
+        value: 'Teravista',
+        label: 'Teravista',
+    }
+]
+
   return (
+
     <>
-      <Box>
-        <Button variant="contained" color="success" sx={{ width: "15%" }}>
-          Save
-        </Button>
-      </Box>
-      {/* --------------------------------------- */}
-
-      <Box marginTop={1.5}>
+      <Button variant="success" className='fs-12' size='sm'>Save</Button>
+      <Box sx={{ marginTop: 2 }}>
         <Grid container spacing={2}>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={{ width: "100%", display: "flex", flexDirection: "row" }}
-          >
-            <Grid item xs={4} sx={{ bgcolor: "#d2d2d2" ,height:300}}>
-              <Typography
-                variant="h4"
-                sx={{ fontWeight: "bold", marginBottom: "0.5rem" }}
-              >
-                Booking With Line
-              </Typography>
-              <TextField
-                variant="standard"
-                size="small"
-                id="line-booking-no"
-                label="Line Booking No"
-                sx={{ width: "6.5rem",marginLeft:"0.5rem" }}
-              />
-              <Grid item xs={6} sx={{ marginTop: "1.4rem" }}>
-                <TextField
-                  variant="standard"
-                  size="small"
-                  id="si-cutoff-date"
-                  label="SI Cut-off Date"
-                  sx={{ width: "6.5rem" ,marginLeft:"0.5rem"}}
-                />
+          <Grid item lg={4}>
+            <Paper elevation={3} sx={{ p: 2 }}>
+              <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Booking with Line</Typography>
+              <Grid container paddingTop={1} spacing={2}  >
+                <Grid item xs={4}>
+                  <TextField variant='standard' label="Line Booking Number" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='standard' label="Line Booking Date" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='standard' label="Line Booking Validity" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='standard' label="SI Cut-off Date" size="small" />
+                </Grid>
+                <Grid item xs={8}>
+                  <TextField fullWidth variant='standard' label="Service Contract Number" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                <SelectTextField data={data} labelText="Pickup Point" value="select" />
+                </Grid>
               </Grid>
-              <Grid item xs={6} sx={{ marginTop: "1.4rem" }}>
-                <TextField
-                  variant="standard"
-                  size="small"
-                  id="pickup-point"
-                  label="Pickup Point"
-                  sx={{ width: "6.5rem" ,marginLeft:"0.5rem"}}
-                />
+            </Paper>
+          </Grid>
+          <Grid item lg={4}>
+          <Paper elevation={3} sx={{ p: 2 }}>
+              <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Vessel Information</Typography>
+              <Grid container paddingTop={1} spacing={2}  >
+                <Grid item xs={4}>
+                  <TextField variant='standard' label="Vessel Voyage" size="small"
+                   InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton>
+                        <Search />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  />
+                </Grid>
+                <Grid item xs={8}>
+                  <TextField variant='filled' fullWidth label="Terminal" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='filled' label="Cut-off Date" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='filled' label="E.T.A" size="small" />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField variant='filled' label="E.T.D" size="small" />
+                </Grid>
+                <Grid item xs={6}>
+                <TextField variant='standard' label="E.T.A. at Destination" size="small" />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid item xs={4} sx={{ bgcolor: "#d2d2d2" }}>
-              <TextField
-                variant="standard"
-                size="small"
-                id="line-booking-date"
-                label="Line Booking Date"
-                sx={{ width: "6.5rem", marginTop: "1.4rem",marginLeft:"0.5rem" }}
-              />
-              
-
-              <Grid item xs={4} sx={{ bgcolor: "#d2d2d2" }}>
-                <TextField
-                  variant="standard"
-                  size="small"
-                  id="service-contract-number"
-                  label="Service Contract Number"
-                  sx={{ width: "6.5rem", marginTop: "1.4rem", marginLeft:"0.5rem"}}
+            </Paper>
+          </Grid>
+          <Grid item lg={4}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+              <Paper elevation={3} sx={{ p: 2 }}>
+              <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Transhipment Ports</Typography>
+              <Grid container paddingTop={1} spacing={2}  >
+                <Grid item xs={6}>
+                  <TextField variant='standard' label="Port 1" size="small"
+                   InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="start">
+                        <IconButton>
+                        <Search />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                <TextField variant='standard' label="Port 2" size="small"
+                 InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="start">
+                      <IconButton>
+                      <Search />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
                 />
+                </Grid>
+                <Grid item xs={6} alignSelf='center'>
+                  <TextField  variant='standard' label="Port 3" size="small"
+                   InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="start">
+                        <IconButton>
+                        <Search />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid item xs={4} sx={{ bgcolor: "#d2d2d2" }}>
-              <TextField
-                variant="standard"
-                size="small"
-                id="line-booking-validity"
-                label="Line Booking Validity"
-                sx={{ width: "6.5rem", marginTop: "1.4rem",marginLeft:"0.5rem" }}
-              />
+            </Paper>
+              </Grid>
+              <Grid item xs={12}></Grid>
             </Grid>
           </Grid>
         </Grid>
