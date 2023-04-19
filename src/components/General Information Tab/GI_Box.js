@@ -1,6 +1,7 @@
 import { Grid, InputLabel, Paper, TextField, Typography } from '@mui/material'
 import React from 'react'
 import SelectTextField from '../SelectTextField'
+import CustomDatePicker from '../CustomDatePicker'
 
 
 
@@ -24,8 +25,8 @@ export default function GI_Box({ data }) {
                         <Grid alignSelf='end' item xs={4}>
                             <TextField variant='standard' label="Booking Number" id="booking-num" size="small" />
                         </Grid>
-                        <Grid item xs={4}>
-                            <InputLabel htmlFor="booking-date">Booking Date</InputLabel>
+                        <Grid item xs={4} alignSelf='end'>
+                        <TextField type='date' variant='standard' label='Booking Date'  size='small' InputLabelProps={{shrink: true}} />
                         </Grid>
                         <Grid item xs={4}>
                             <SelectTextField data={data} labelText="Delivery Mode" value="select" />
@@ -43,7 +44,7 @@ export default function GI_Box({ data }) {
                 </Paper>
             </Grid>
             <Grid item xs={12}>
-            <Paper elevation={3} sx={{ p: 2 }}>
+                <Paper elevation={3} sx={{ p: 2 }}>
                     <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Cargo Information</Typography>
                     <Grid container paddingTop={1} spacing={2}  >
                         <Grid item xs={4}>

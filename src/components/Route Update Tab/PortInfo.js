@@ -22,7 +22,7 @@ export default function PortInfo({port}) {
         <TextField variant='filled' disabled label="E.T.D" size="small" />
       </Grid>
       <Grid item xs={4}>
-        <TextField variant='standard' label="E.T.A at Destination" size="small" />
+      <TextField type='date' variant='standard' label="E.T.A. at Destination"  size='small' InputLabelProps={{shrink: true}} />
       </Grid>
     </Grid>
   </Paper>

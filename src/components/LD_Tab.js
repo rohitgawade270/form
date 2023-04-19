@@ -35,13 +35,13 @@ export default function LD_Tab() {
                   <TextField variant='standard' label="Line Booking Number" size="small" />
                 </Grid>
                 <Grid item xs={4}>
-                  <TextField variant='standard' label="Line Booking Date" size="small" />
+                  <TextField type='date' variant='standard' label='Line Booking Date'  size='small' InputLabelProps={{shrink: true}} />
                 </Grid>
                 <Grid item xs={4}>
-                  <TextField variant='standard' label="Line Booking Validity" size="small" />
+                  <TextField type='date' variant='standard' label="Line Booking Validity"  size='small' InputLabelProps={{shrink: true}} />
                 </Grid>
                 <Grid item xs={4}>
-                  <TextField variant='standard' label="SI Cut-off Date" size="small" />
+                  <TextField type='date' variant='standard' label="SI Cut-off Date"  size='small' InputLabelProps={{shrink: true}} />
                 </Grid>
                 <Grid item xs={8}>
                   <TextField fullWidth variant='standard' label="Service Contract Number" size="small" />
@@ -82,7 +82,7 @@ export default function LD_Tab() {
                   <TextField variant='filled' label="E.T.D" size="small" />
                 </Grid>
                 <Grid item xs={6}>
-                <TextField variant='standard' label="E.T.A. at Destination" size="small" />
+                <TextField type='date' variant='standard' label="E.T.A. at Destination"  size='small' InputLabelProps={{shrink: true}} />
                 </Grid>
               </Grid>
             </Paper>
