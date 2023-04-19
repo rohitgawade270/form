@@ -14,7 +14,7 @@ export default function PI_Box({ data }) {
 
         <Grid container rowSpacing={2}>
             <Grid paddingTop={1} item sm={12} >
-                <Paper elevation={0} sx={{ bgcolor: '#d2d2d2', p: 2 }}>
+                <Paper elevation={3} sx={{ p: 2 }}>
                     <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Parties Involved</Typography>
                     <Grid container paddingTop={1} spacing={2}  >
                         <Grid item sm={4}>
@@ -45,7 +45,7 @@ export default function PI_Box({ data }) {
                 </Paper>
             </Grid>
             <Grid item sm={12}>
-            <Paper elevation={0} sx={{ bgcolor: '#d2d2d2', p: 2 }}>
+            <Paper elevation={3} sx={{ p: 2 }}>
                     <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>HAZ Details</Typography>
                     <Grid container paddingTop={1} spacing={2}  >
                         <Grid item sm={5}>

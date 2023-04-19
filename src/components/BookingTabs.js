@@ -18,7 +18,7 @@ export default function LabTabs() {
   };
 
   const CustomTabs = styled(Tab)({
-    background: '#d2d2d2',
+    background: 'white',
     marginRight:4,
     fontSize:'14px',
     border:'1px solid black',
