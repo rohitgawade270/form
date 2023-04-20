@@ -1,12 +1,6 @@
-import { Grid, InputLabel, Paper, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React from 'react';
+import { Grid, Paper, TextField } from '@mui/material'
 import SelectTextField from '../SelectTextField'
-import CustomDatePicker from '../CustomDatePicker'
-
-
-
-
-
 
 export default function GI_Box({ data }) {
 
@@ -15,18 +9,18 @@ export default function GI_Box({ data }) {
     return (
 
         <Grid container rowSpacing={2}>
-            <Grid paddingTop={1} item xs={12} >
-                <Paper elevation={3} sx={{ p: 2 }}>
-                    <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>General Information</Typography>
-                    <Grid container paddingTop={1} spacing={2}  >
+            <Grid item xs={12} >
+                <Paper elevation={1} sx={{ p: 2 }}>
+                    <p className='sectionTitle'>General Information</p>
+                    <Grid container spacing={2}  >
                         <Grid item xs={4}>
                             <SelectTextField data={data} id="booking-office" labelText="Booking Office" value="select" />
                         </Grid>
                         <Grid alignSelf='end' item xs={4}>
-                            <TextField variant='standard' label="Booking Number" id="booking-num" size="small" />
+                            <TextField variant='standard' fullWidth   label="Booking Number" id="booking-num" size="small" />
                         </Grid>
                         <Grid item xs={4} alignSelf='end'>
-                        <TextField type='date' variant='standard' label='Booking Date'  size='small' InputLabelProps={{shrink: true}} />
+                            <TextField type='date' fullWidth variant='standard' label='Booking Date' size='small' InputLabelProps={{ shrink: true }} />
                         </Grid>
                         <Grid item xs={4}>
                             <SelectTextField data={data} labelText="Delivery Mode" value="select" />
@@ -44,9 +38,9 @@ export default function GI_Box({ data }) {
                 </Paper>
             </Grid>
             <Grid item xs={12}>
-                <Paper elevation={3} sx={{ p: 2 }}>
-                    <Typography variant='h6' component='h6' sx={{ fontSize: '16px', fontWeight: 600 }}>Cargo Information</Typography>
-                    <Grid container paddingTop={1} spacing={2}  >
+                <Paper elevation={1} sx={{ p: 2 }}>
+                    <p className='sectionTitle'>Cargo Information</p>
+                    <Grid container spacing={2}  >
                         <Grid item xs={4}>
                             <SelectTextField data={data} labelText="IMO Class" value="select" />
                         </Grid>
@@ -60,10 +54,10 @@ export default function GI_Box({ data }) {
                             <SelectTextField data={data} labelText="Parking Group" value="select" />
                         </Grid>
                         <Grid item xs={4} alignSelf='end'>
-                            <TextField variant='standard' label="Gross Weight" size="small" />
+                            <TextField variant='standard' fullWidth label="Gross Weight" size="small" />
                         </Grid>
                         <Grid item xs={4} alignSelf='end'>
-                            <TextField variant='standard' label="Volume" size="small" />
+                            <TextField variant='standard' fullWidth label="Volume" size="small" />
                         </Grid>
                     </Grid>
                 </Paper>

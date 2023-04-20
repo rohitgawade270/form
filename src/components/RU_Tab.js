@@ -1,8 +1,7 @@
-import { Paper, TextField, Typography, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import SelectTextField from './SelectTextField'
 import PortInfo from './Route Update Tab/PortInfo'
 
 

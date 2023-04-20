@@ -1,3 +1,14 @@
 .fs-12{
     font-size: 12px !important;
 }
+body,*{
+    font-family: 'poppins';
+}
+.sectionTitle{
+    font-family: 'poppins';
+    font-size: 12pt;
+    font-weight: bold;
+}
+.btn-success, .btn-sm{
+    background-color: red;
+}
