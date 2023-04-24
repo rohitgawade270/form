@@ -1,0 +1,51 @@
+{
+    "booking": [
+        {
+            "generalInformation": {
+                "generalInfo": {
+                    "bookingOffice": "Office 1",
+                    "bookingNumber": 42525,
+                    "bookingDate": "24/05/2023",
+                    "deliveryMode": "COD",
+                    "stuffingType": "stuffing",
+                    "stuffingLocation": "sakinaka",
+                    "bookingType": "booking"
+                },
+                "partiesInvolved": {
+                    "customer": "customer",
+                    "customerLocation": "sakinaka",
+                    "shipper": "shipper",
+                    "consianee": "consianee",
+                    "CHA": "cha",
+                    "salesPerson": "sp",
+                    "overseasAgent": "ov"
+                },
+                "routeInformation": {
+                    "POR": "por",
+                    "POL": "pol",
+                    "POD": "pod",
+                    "FPD": "fpd",
+                    "MOT": "mot"
+                },
+                "cargoInformation": {
+                    "imoClass": "imo",
+                    "imoUnNumber": "imo num",
+                    "packingGroup": "packing",
+                    "grossWeight": "20",
+                    "volume": 233
+                },
+                "hazDetails": {
+                    "imoClass": "imo",
+                    "imoUnNumber": "imo num",
+                    "packingGroup": "packing"
+                },
+                "containerDetails": {
+                    "sizeType": "40hc",
+                    "noOfContainers": 2
+                }
+            },
+            "lineDetails": {},
+            "routeUpdate": {}
+        }
+    ]
+}

@@ -1,15 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { Grid, Paper, TextField,  Box, InputAdornment, IconButton } from '@mui/material'
+import { Grid, TextField, Box, InputAdornment, IconButton, Paper, } from '@mui/material'
 import SelectTextField from "./SelectTextField";
-import { Search } from "@mui/icons-material";
+import {  Search } from "@mui/icons-material";
 
-export default function LD_Tab() {
+export default function LineDetailsTab() {
 
   const data = [
     {
       value: 'select',
-      label: 'select an option'
+      label: 'select'
     },
     {
       value: 'FireQube',
@@ -24,39 +24,38 @@ export default function LD_Tab() {
   return (
 
     <>
-      <Button variant="success" className='fs-12' size='sm'>Save</Button>
-      <Box sx={{ marginTop: 2, fontFamily:'poppins' }}>
+      <Box sx={{ marginTop: 2 }}>
         <Grid container spacing={2}>
-          <Grid item lg={4}>
-            <Paper elevation={1} sx={{ p: 2 }}>
-              <p className='sectionTitle'>Booking with Line</p>
+          <Grid lg={4} item>
+            <Paper elevation={1} sx={{ p: 1 }}>
+              <p style={{ fontWeight: 'bold' }}>Booking with Line</p>
               <Grid container spacing={2}  >
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField variant='standard' fullWidth label="Line Booking Number" size="small" />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField type='date' variant='standard' fullWidth label='Line Booking Date' size='small' InputLabelProps={{ shrink: true }} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField type='date' variant='standard' fullWidth label="Line Booking Validity" size='small' InputLabelProps={{ shrink: true }} />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField type='date' variant='standard' fullWidth label="SI Cut-off Date" size='small' InputLabelProps={{ shrink: true }} />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField fullWidth variant='standard' label="Service Contract Number" size="small" />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <SelectTextField data={data} labelText="Pickup Point" value="select" />
                 </Grid>
               </Grid>
             </Paper>
           </Grid>
-          <Grid item lg={4}>
-            <Paper elevation={1} sx={{ p: 2 }}>
-              <p className='sectionTitle'>Vessel Information</p>
-              <Grid container spacing={2}  >
-                <Grid item xs={5}>
+          <Grid lg={4} item>
+          <Paper elevation={1} sx={{ p: 1 }}>
+            <p style={{ fontWeight: 'bold' }}>Vessel Information</p>
+            <Grid container spacing={2}  >
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField variant='standard' fullWidth label="Vessel Voyage" size="small"
                     InputProps={{
                       endAdornment: (
@@ -69,32 +68,30 @@ export default function LD_Tab() {
                     }}
                   />
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField variant='filled' fullWidth label="Terminal" size="small" />
                 </Grid>
-                <Grid item xs={4}>
-                  <TextField variant='filled' label="Cut-off Date" size="small" />
+                <Grid item lg={4} sm={4} xs={6}>
+                  <TextField variant='filled' fullWidth label="Cut-off Date" size="small" />
                 </Grid>
-                <Grid item xs={4}>
-                  <TextField variant='filled' label="E.T.A" size="small" />
+                <Grid item lg={4} sm={4} xs={6}>
+                  <TextField variant='filled' fullWidth label="E.T.A" size="small" />
                 </Grid>
-                <Grid item xs={4}>
-                  <TextField variant='filled' label="E.T.D" size="small" />
+                <Grid item lg={4} sm={4} xs={6}>
+                  <TextField variant='filled' fullWidth label="E.T.D" size="small" />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item lg={4} sm={4} xs={6}>
                   <TextField type='date' fullWidth variant='standard' label="E.T.A. at Destination" size='small' InputLabelProps={{ shrink: true }} />
                 </Grid>
               </Grid>
-            </Paper>
-          </Grid>
-          <Grid item lg={4}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Paper elevation={1} sx={{ p: 2 }}>
-                  <p className='sectionTitle'>Transhipment Ports</p>
-                  <Grid container spacing={2}  >
-                    <Grid item xs={4}>
-                      <TextField variant='standard' label="Port 1" size="small"
+          </Paper>
+        </Grid>
+        <Grid lg={4} item>
+          <Paper elevation={1} sx={{ p: 1 }}>
+            <p style={{ fontWeight: 'bold' }}>Transhipment Ports</p>
+            <Grid container spacing={2}  >
+                    <Grid item sm={4} xs={6}>
+                      <TextField variant='standard' label="Port 1" size="small" fullWidth
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="start">
@@ -106,8 +103,8 @@ export default function LD_Tab() {
                         }}
                       />
                     </Grid>
-                    <Grid item xs={4}>
-                      <TextField variant='standard' label="Port 2" size="small"
+                    <Grid item sm={4} xs={6}>
+                      <TextField variant='standard' label="Port 2" size="small" fullWidth
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="start">
@@ -119,8 +116,8 @@ export default function LD_Tab() {
                         }}
                       />
                     </Grid>
-                    <Grid item xs={4} alignSelf='center'>
-                      <TextField variant='standard' label="Port 3" size="small"
+                    <Grid item sm={4} xs={6} alignSelf='center'>
+                      <TextField variant='standard' label="Port 3" size="small" fullWidth
                         InputProps={{
                           endAdornment: (
                             <InputAdornment position="start">
@@ -133,12 +130,12 @@ export default function LD_Tab() {
                       />
                     </Grid>
                   </Grid>
-                </Paper>
-              </Grid>
-              <Grid item xs={12}></Grid>
-            </Grid>
-          </Grid>
+          </Paper>
         </Grid>
+        </Grid>
+      </Box>
+      <Box sx={{ marginTop: 2 }}>
+        <Button variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
       </Box>
     </>
   );

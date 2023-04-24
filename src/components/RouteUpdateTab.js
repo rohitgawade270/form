@@ -2,15 +2,12 @@ import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import PortInfo from './Route Update Tab/PortInfo'
+import PortInfo from './PortInfo'
 
 
-export default function RU_Tab() {
+export default function RouteUpdateTab() {
   return (
     <>
-      <Box>
-      <Button variant="success" className='fs-12' size='sm'>Save</Button>
-      </Box>
       <Box sx={{ marginTop: 2 }}>
         <Grid container spacing={2}>
           <Grid lg={4} item>
@@ -24,6 +21,9 @@ export default function RU_Tab() {
           </Grid>
         </Grid>
       </Box >
+      <Box sx={{marginTop:2}}>
+      <Button variant="primary"  size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
+      </Box>
     </>
   )
 }

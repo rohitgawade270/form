@@ -1,8 +1,9 @@
 .fs-12{
-    font-size: 12px !important;
+    font-size: 10pt !important;
 }
 body,*{
     font-family: 'poppins';
+    font-size: 10pt;
 }
 .sectionTitle{
     font-family: 'poppins';
@@ -11,4 +12,15 @@ body,*{
 }
 .btn-success, .btn-sm{
     background-color: red;
+}
+.textMuted{
+    color: #969696;
+    font-size: 8pt;
+    font-family: 'poppins';
+}
+.paddingRight{
+    padding-right: 8px;
+}
+.bootstrapIcon{
+    font-size: 9pt;
 }
