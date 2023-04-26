@@ -1,51 +1,180 @@
 {
-    "booking": [
-        {
-            "generalInformation": {
-                "generalInfo": {
-                    "bookingOffice": "Office 1",
-                    "bookingNumber": 42525,
-                    "bookingDate": "24/05/2023",
-                    "deliveryMode": "COD",
-                    "stuffingType": "stuffing",
-                    "stuffingLocation": "sakinaka",
-                    "bookingType": "booking"
-                },
-                "partiesInvolved": {
-                    "customer": "customer",
-                    "customerLocation": "sakinaka",
-                    "shipper": "shipper",
-                    "consianee": "consianee",
-                    "CHA": "cha",
-                    "salesPerson": "sp",
-                    "overseasAgent": "ov"
-                },
-                "routeInformation": {
-                    "POR": "por",
-                    "POL": "pol",
-                    "POD": "pod",
-                    "FPD": "fpd",
-                    "MOT": "mot"
-                },
-                "cargoInformation": {
-                    "imoClass": "imo",
-                    "imoUnNumber": "imo num",
-                    "packingGroup": "packing",
-                    "grossWeight": "20",
-                    "volume": 233
-                },
-                "hazDetails": {
-                    "imoClass": "imo",
-                    "imoUnNumber": "imo num",
-                    "packingGroup": "packing"
-                },
-                "containerDetails": {
-                    "sizeType": "40hc",
-                    "noOfContainers": 2
-                }
-            },
-            "lineDetails": {},
-            "routeUpdate": {}
-        }
-    ]
+  "booking": [
+    {
+      "id": 1,
+      "generalInformation": {
+        "bookingOffice": "Office 1",
+        "bookingNumber": 42525,
+        "bookingDate": "24/05/2023",
+        "deliveryMode": "COD",
+        "stuffingType": "stuffing",
+        "stuffingLocation": "sakinaka",
+        "bookingType": "booking"
+      },
+      "partiesInvolved": {
+        "customer": "customer",
+        "customerLocation": "sakinaka",
+        "shipper": "shipper",
+        "consianee": "consianee",
+        "cha": "cha",
+        "salesPerson": "sp",
+        "overseasAgent": "ov"
+      },
+      "routeInformation": {
+        "por": "por",
+        "pol": "pol",
+        "pod": "pod",
+        "fpd": "fpd",
+        "mot": "mot"
+      },
+      "cargoInformation": {
+        "imoClass": "imo",
+        "imoUnNumber": "imo num",
+        "parkingGroup": "packing",
+        "grossWeight": "20",
+        "volume": 233
+      },
+      "hazDetails": {
+        "imoClass": "imo",
+        "imoUnNumber": "imo num",
+        "packingGroup": "packing"
+      },
+      "containerDetails": {
+        "sizeType": "40 HC",
+        "noOfContainers": 2
+      }
+    },
+    {
+      "generalInformation": {
+        "bookingOffice": "Office 1",
+        "bookingNumber": "67",
+        "bookingDate": "2023-04-25",
+        "deliveryMode": "COD",
+        "stuffingType": "Stuffing 1",
+        "stuffingLocation": "Pune",
+        "bookingType": "Online"
+      },
+      "partiesInvolved": {
+        "customer": "Customer 2",
+        "customerLocation": "Mumbai",
+        "shipper": "Shipper 2",
+        "consianee": "Consianee 2",
+        "cha": "CHA 1",
+        "salesPerson": "Person 2",
+        "overseasAgent": "OG 1"
+      },
+      "routeInformation": {
+        "por": "POR 1",
+        "pol": "POL 2",
+        "pod": "POD 2",
+        "fpd": "FPD 1",
+        "mot": "MOT 2"
+      },
+      "cargoInformation": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 1",
+        "parkingGroup": "Parking 1",
+        "grossWeight": "23",
+        "volume": "230"
+      },
+      "hazDetails": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 1",
+        "parkingGroup": "Parking 2"
+      },
+      "containerDetails": {
+        "sizeType": "40 Hc",
+        "noOfContainers": "4"
+      },
+      "id": 2
+    },
+    {
+      "generalInformation": {
+        "bookingOffice": "Office 2",
+        "bookingNumber": "9878999999",
+        "bookingDate": "2023-04-27",
+        "deliveryMode": "COD",
+        "stuffingType": "Stuffing 1",
+        "stuffingLocation": "Mumbai",
+        "bookingType": "Online"
+      },
+      "partiesInvolved": {
+        "customer": "Customer 1",
+        "customerLocation": "Mumbai",
+        "shipper": "Shipper 1",
+        "consianee": "Consianee 1",
+        "cha": "CHA 1",
+        "salesPerson": "Person 2",
+        "overseasAgent": "OG 1"
+      },
+      "routeInformation": {
+        "por": "POR 1",
+        "pol": "POL 1",
+        "pod": "POD 1",
+        "fpd": "FPD 1",
+        "mot": "MOT 1"
+      },
+      "cargoInformation": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 1",
+        "parkingGroup": "Parking 1",
+        "grossWeight": "12",
+        "volume": "120"
+      },
+      "hazDetails": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 2",
+        "parkingGroup": "Parking 1"
+      },
+      "containerDetails": {
+        "sizeType": "20 Hc",
+        "noOfContainers": "67"
+      },
+      "id": 3
+    },
+    {
+      "generalInformation": {
+        "bookingOffice": "Office 1",
+        "bookingNumber": "123456",
+        "bookingDate": "2023-04-28",
+        "deliveryMode": "Card",
+        "stuffingType": "Stuffing 2",
+        "stuffingLocation": "Mumbai",
+        "bookingType": "Online"
+      },
+      "partiesInvolved": {
+        "customer": "Customer 2",
+        "customerLocation": "Mumbai",
+        "shipper": "Shipper 2",
+        "consianee": "Consianee 1",
+        "cha": "CHA 1",
+        "salesPerson": "Person 1",
+        "overseasAgent": "OG 1"
+      },
+      "routeInformation": {
+        "por": "POR 1",
+        "pol": "POL 1",
+        "pod": "POD 2",
+        "fpd": "FPD 1",
+        "mot": "MOT 2"
+      },
+      "cargoInformation": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 2",
+        "parkingGroup": "Parking 2",
+        "grossWeight": "120",
+        "volume": "345"
+      },
+      "hazDetails": {
+        "imoClass": "IMO Class 1",
+        "imoUnNumber": "Un 2",
+        "parkingGroup": "Parking 1"
+      },
+      "containerDetails": {
+        "sizeType": "40 Hc",
+        "noOfContainers": "12"
+      },
+      "id": 4
+    }
+  ]
 }

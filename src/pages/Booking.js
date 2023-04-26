@@ -1,33 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useContext} from 'react';
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import BookingTabs from '../components/BookingTabs'
+import BookingContext from '../context/BookingContext';
 
 export default function Booking() {
 
-
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  async function fetchData() {
-    let fetchApi = await fetch('http://localhost:3031/booking');
-    let jsonData = await fetchApi.json();
-    console.log(jsonData)
-  }
+  const context = useContext(BookingContext);
+  const { generalInfo, partiesDetails, routeInfo} = context;
+  const { bookingNumber, bookingDate } = generalInfo;
+  const { customer } = partiesDetails;
+  const { fpd } = routeInfo;
 
   const bookingData = [
     {
       label: 'Booking No',
-      value: '637637'
+      value: bookingNumber 
     },
     {
       label: 'Booking Date',
-      value: '24/04/2023'
+      value:  bookingDate
     },
     {
       label: 'Customer',
-      value: 'customer'
+      value: customer === 'select' ? '' : customer
     },
     {
       label: 'Loading Port',
@@ -35,7 +30,7 @@ export default function Booking() {
     },
     {
       label: 'FPD',
-      value: '14242'
+      value: fpd === 'select' ? '' : fpd
     },
     {
       label: 'Commodity',
@@ -70,7 +65,7 @@ export default function Booking() {
 
 
   return (
-    <Box sx={{ marginTop: 8, fontFamily: 'poppins' }}>
+    <Box sx={{ marginTop: 10, fontFamily: 'poppins' }}>
 
       <Paper elevation={5} sx={{ p: '20px' }}>
         <Grid container spacing={2}>
@@ -91,9 +86,9 @@ export default function Booking() {
         </Grid>
       </Paper>
 
-      <Paper elevation={5} sx={{ p: '20px', marginTop: 2 }}>
+      <Paper elevation={5} sx={{ p: '20px', marginTop: 2 , minHeight:'495px' }}>
         <h4 style={{ marginBottom: '0' }}>Booking</h4>
-        <p style={{ marginBottom: '0' }}>Manage booking details</p>
+        {/* <p style={{ marginBottom: '0' }}>Manage booking details</p> */}
         <BookingTabs />
       </Paper>
 
