@@ -1,0 +1,67 @@
+{
+      "bookingOffice": [
+        "Office 1","Office 2"
+      ],
+      "deliveryMode":[
+        "Online","Offline"
+      ],
+      "stuffingType":[
+      "Stuffing 1","Stuffing 2"
+      ],
+      "stuffingLocation":[
+      "Mumbai","Pune"
+      ],
+      "bookingType":[
+        "Online","Offline","direct","indirect"
+      ],
+      "customer":[
+        "Customer 1","Customer 2"
+      ],
+      "customerLocation":[
+        "Mumbai","Pune"
+      ],
+      "shipper":[
+        "Shipper 1","Shipper 2"
+      ],
+      "consianee":[
+        "Consianee 1","Consianee 2"
+      ],
+      "cha":[
+        "cha 1","cha 2"
+      ],
+      "salesPerson":[
+        "Person 1","Person 2"
+      ],
+      "overseasAgent":[
+        "Agent 1","Agent 2"
+      ],
+      "por":[
+        "por 1","por 2"
+      ],
+      "pol":[
+        "pol 1","pol 2"
+      ],
+      "pod":[
+        "pod 1","pod 2"
+      ],
+      "fpd":[
+        "fpd 1","fpd 2"
+      ],
+      "mot":[
+        "mot 1","mot 2"
+      ],
+      "imoClass":[
+        "imo class 1","imo class 2"
+      ],
+      "imoUnNumber":[
+        "imoUnNumber 1","imoUnNumber 2"
+      ],
+      "parkingGroup":[
+        "parking 1","parking 2"
+      ],
+      "containerSizeType":[
+        "20 HC","40 HC"
+      ]
+      
+      
+}

@@ -1,28 +1,22 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import BookingTabs from '../components/BookingTabs'
-import BookingContext from '../context/BookingContext';
+
 
 export default function Booking() {
-
-  const context = useContext(BookingContext);
-  const { generalInfo, partiesDetails, routeInfo} = context;
-  const { bookingNumber, bookingDate } = generalInfo;
-  const { customer } = partiesDetails;
-  const { fpd } = routeInfo;
 
   const bookingData = [
     {
       label: 'Booking No',
-      value: bookingNumber 
+      value: '5356783'
     },
     {
       label: 'Booking Date',
-      value:  bookingDate
+      value: '27/04/2023'
     },
     {
       label: 'Customer',
-      value: customer === 'select' ? '' : customer
+      value: 'customer 1'
     },
     {
       label: 'Loading Port',
@@ -30,7 +24,7 @@ export default function Booking() {
     },
     {
       label: 'FPD',
-      value: fpd === 'select' ? '' : fpd
+      value: 'fpd'
     },
     {
       label: 'Commodity',

@@ -1,47 +1,44 @@
-// import { Box, Checkbox, Container, FormControlLabel, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
-// import React from 'react'
-// import { Button } from 'react-bootstrap';
-// import { Save, XSquareFill, CardChecklist, Grid } from 'react-bootstrap-icons';
-// import DataGridBox from '../components/DataGridBox';
+import { Box, Paper, Stack, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import { Button } from 'react-bootstrap';
 
-// export default function Form() {
+export default function Form() {
 
-//     const app = [
-//         {
-//             value: 'FireQube',
-//             label: 'FireQube',
-//         },
-//         {
-//             value: 'Teravista',
-//             label: 'Teravista',
-//         }
-//     ];
+    const [baseObj, setbaseObj] = useState({employeeId:12334,name:"aniket",email:"aniketchate123@gmail.com",phone:9845654567,address:"sakinaka",age:22}); 
 
-//     return (
-//         // <Container sx={{ marginY: 10 }}>
-//             <Paper elevation={3} sx={{ padding: 4 ,marginY: 10  }}>
-//                 <Typography variant='h5'>Access Level List</Typography>
-//                 <Typography variant='subtitle2'>Define & update application access levels</Typography>
-//                 <Stack direction={{sm:'column',md:'row'}} gap={2} marginY={2}>
-//                     <TextField fullWidth id="admin" label="AccessLevelMode" variant="standard" />
-//                     <TextField fullWidth id="access-level-name" label="AccessLevelName" variant="standard" />
-//                     <TextField fullWidth id="access-level-desc" label="AccessLevelDescription" multiline rows={2} variant="standard" />
-//                     <TextField id="select-app" select label="App" defaultValue="FireQube" variant="standard" fullWidth >
-//                         {app.map((option) => (
-//                             <MenuItem key={option.value} value={option.value}>
-//                                 {option.label}
-//                             </MenuItem>
-//                         ))}
-//                     </TextField>
-//                     <FormControlLabel  control={<Checkbox size="small" />} label="Active" />
-//                 </Stack>
-//                 {/* <DataGridBox /> */}
-//                 <Stack direction='row' flexWrap='wrap' gap={1}>
-//                     <Button variant="primary" size='sm'><Typography variant='body1' sx={{marginRight:1}} component='span'><Save size='15' /></Typography> Save</Button>
-//                     <Button variant="primary" size='sm'><Typography variant='body1' sx={{marginRight:1}} component='span'><XSquareFill size='15' /></Typography> Delete</Button>
-//                     <Button variant="primary" size='sm'><Typography variant='body1' sx={{marginRight:1}} component='span'><CardChecklist  size='15' /></Typography> Back to List</Button>
-//                 </Stack>
-//             </Paper>
-//         // </Container>
-//     )
-// }
+    const onValChange = (e) => {
+        //console.log(e);
+        if(e.target.type === 'checkbox')
+          setbaseObj({...baseObj, [e.target.name]: e.target.checked ? true : false});
+        else
+          setbaseObj({...baseObj, [e.target.name]: e.target.value});
+    
+        //console.log(e.target);
+    }
+
+    function getData(){
+        console.log(baseObj);
+    }
+
+
+    return (
+        <Box>
+            <Paper elevation={3} sx={{ padding: 4, marginY: 10 }}>
+                <Typography variant='h5' sx={{fontFamily:'poppins'}}>Employee Details</Typography>
+                <Typography variant='subtitle2' sx={{fontFamily:'poppins'}} >Define & update employee details</Typography>
+                <Stack direction='row' flexWrap='wrap' gap={2} marginY={2}>
+                    <TextField  sx={{width:200}} value={baseObj.employeeId} onChange={(evt) => onValChange(evt)} name="employeeId" label="empId" variant="standard" />
+                    <TextField sx={{width:200}} value={baseObj.name} onChange={(evt) => onValChange(evt)} name="name" label="name" variant="standard" />
+                    <TextField sx={{width:200}} value={baseObj.email} onChange={(evt) => onValChange(evt)} name="email" type='email' label="email" variant="standard" />
+                    <TextField sx={{width:200}} value={baseObj.phone} onChange={(evt) => onValChange(evt)} name="phone" label="phone" variant="standard" />
+                    <TextField sx={{width:200}} value={baseObj.address} onChange={(evt) => onValChange(evt)} name="address" label="address" variant="standard" />
+                    <TextField sx={{width:200}} value={baseObj.age} onChange={(evt) => onValChange(evt)} name="age" label="age" variant="standard" />
+                </Stack>
+                <Stack direction='row' flexWrap='wrap' gap={1}>
+                <Button onClick={getData} variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
+                </Stack>
+            </Paper>
+        </Box>
+
+    )
+}

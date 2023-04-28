@@ -5,16 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './Utils/Theme';
 import { ThemeProvider } from '@emotion/react';
-import BookingItems from './context/BookingItems';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={theme}>
-    <BookingItems>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-    </BookingItems>
   </ThemeProvider>
 );
 

@@ -1,0 +1,48 @@
+{
+  "generalInformation":{
+    "generalInfo":{
+      "bookingOffice":"Office 1",
+      "bookingNumber":12,
+      "bookingDate":"28/04/2023",
+      "deliveryMode":"Online",
+      "stuffingType":"Stuffing 1",
+      "stuffingLocation":"Mumbai",
+      "bookingType":"Online"
+    },
+    "partiesInvolved":{
+      "customer":"Customer 1",
+       "customerLocation":"Pune",
+       "shipper":"Shipper 1",
+       "consianee":"Consianee 1",
+       "cha":"cha 1",
+       "salesPerson":"Person 1",
+       "overseasAgent":"Agent 1",
+       "lineBlRequired":true
+    },
+    "routeInformation":{
+      "por":"por 1",
+      "pol":"pol 1",
+      "pod":"pod 1",
+      "fpd":"fpd 1",
+      "mot":"mot 1",
+      "multiCurrency":false
+
+    },
+    "cargoInformation":{
+      "imoClass":"imo class 1",
+      "imoUnNumber":"imoUnNumber 1",
+      "parkingGroup":"parking 1",
+      "grossWeight":20,
+      "volume":202
+    },
+    "hazDetails":{
+      "imoClass":"imo class 1",
+      "imoUnNumber":"imoUnNumber 1",
+      "parkingGroup":"parking 1" 
+    },
+    "containerDetails":{
+      "containerSizeType":"20 HC",
+      "noOfcontainers":2
+    }
+  }
+}

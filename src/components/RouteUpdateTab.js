@@ -6,6 +6,12 @@ import { Search } from '@mui/icons-material'
 
 
 export default function RouteUpdateTab() {
+
+
+
+
+
+
   return (
     <>
       <Stack sx={{ direction: 'column', minHeight: '382px', justifyContent: 'space-between' }}>
@@ -16,7 +22,7 @@ export default function RouteUpdateTab() {
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 1</p>
                 <Grid container spacing={2}  >
                   <Grid item lg={4} sm={4} xs={6}>
-                    <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
+                    <TextField  variant='standard' label="Vessel Voyage" size="small" fullWidth
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -51,7 +57,7 @@ export default function RouteUpdateTab() {
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 2</p>
                 <Grid container spacing={2}  >
                   <Grid item lg={4} sm={4} xs={6}>
-                    <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
+                    <TextField  variant='standard' label="Vessel Voyage" size="small" fullWidth
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -86,7 +92,7 @@ export default function RouteUpdateTab() {
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 3</p>
                 <Grid container spacing={2}  >
                   <Grid item lg={4} sm={4} xs={6}>
-                    <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
+                    <TextField  variant='standard' label="Vessel Voyage" size="small" fullWidth
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -122,7 +128,6 @@ export default function RouteUpdateTab() {
           <Button variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
         </Box>
       </Stack>
-
     </>
   )
 }

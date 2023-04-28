@@ -7,9 +7,12 @@ import TabPanel from '@mui/lab/TabPanel';
 import GeneralInformationTab from './GeneralInformationTab';
 import LineDetailsTab from './LineDetailsTab';
 import RouteUpdateTab from './RouteUpdateTab';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 export default function BookingTabs() {
   const [value, setValue] = useState('1');
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -20,7 +23,7 @@ export default function BookingTabs() {
     <Box sx={{ width: '100%', typography: 'body1'}}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} textColor="secondary" indicatorColor="secondary" aria-label="lab API tabs example">
+          <TabList onChange={handleChange} textColor="secondary" variant={`${isSmallScreen ? "fullWidth":"standard"}`} indicatorColor="secondary" aria-label="booking tab">
             <Tab label="General Information" value="1" />
             <Tab label="Line Details" value="2" />
             <Tab label="Route Update" value="3" />
