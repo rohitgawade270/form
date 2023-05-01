@@ -5,12 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './Utils/Theme';
 import { ThemeProvider } from '@emotion/react';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={theme}>
     <React.StrictMode>
+      <Router>
+
       <App />
+      </Router>
     </React.StrictMode>
   </ThemeProvider>
 );
