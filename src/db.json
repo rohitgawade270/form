@@ -60,7 +60,10 @@
         "parking 1","parking 2"
       ],
       "containerSizeType":[
-        "20 HC","40 HC"
+        "20 HC","40 HC","60 HC","80 HC"
+      ],
+      "pickupPoint":[
+        "Mumbai","Pune"
       ]
       
       

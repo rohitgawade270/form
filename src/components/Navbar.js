@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -17,8 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Image from 'mui-image'
-import Booking from '../pages/Booking';
-import Form from '../pages/Form';
+import { Link, Outlet } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -89,7 +88,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(true);
-
+  // const location = useLocation();
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -97,6 +96,10 @@ export default function Navbar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const data = [
+    { title: "Booking", path:"/" }
+  ];
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -123,13 +126,18 @@ export default function Navbar() {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            <Image sx={{borderRadius:'20px'}} height={33} src='https://teravista.io/assets/img/Teravista%20bg.png' />
+            <Image sx={{ borderRadius: '20px' }} height={33} src='https://teravista.io/assets/img/Teravista%20bg.png' />
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+          {data.map((text, index) => (
+            <ListItem 
+            key={text.title} 
+            disablePadding sx={{ display: 'block' }}
+            component={Link}
+            to={text.path}
+            >
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -146,40 +154,14 @@ export default function Navbar() {
                 >
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0 , color:'black'}} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor:'#f0f0f0'}}>
-    <Booking />
-    {/* <Form /> */}
+      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor: '#f0f0f0', minHeight:'100vh' }}>
+        <Outlet />
       </Box>
     </Box>
   );
