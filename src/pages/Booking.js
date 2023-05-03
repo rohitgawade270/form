@@ -91,7 +91,7 @@ export default function Booking() {
     <>
     {
       Object.keys(booking).length > 0 ?
-         <Box sx={{ marginTop: 10, fontFamily: 'poppins' }}>
+         <Box sx={{ marginTop: 9, fontFamily: 'poppins' }}>
          <Box>
            {/* for booking summary */}
            <Paper elevation={5} sx={{ p: '20px' }}>
@@ -115,7 +115,7 @@ export default function Booking() {
          </Box>
          <Box>
            {/* for booking */}
-           <Paper elevation={5} sx={{ p: '20px', marginTop: 2, minHeight: '495px' }}>
+           <Paper elevation={5} sx={{ p: '20px', marginTop: 2, minHeight: '49px' }}>
              <h4>Booking</h4>
              <Box sx={{ width: '100%', typography: 'body1' }}>
                <TabContext value={value}>
