@@ -3,7 +3,7 @@ import { TableCell, TableRow, Typography } from '@mui/material'
 import { Link } from 'react-router-dom';
 
 export default function BookingItems({ booking }) {
-    const { id, generalInformation: { bookingNumber, bookingDate, deliveryMode } } = booking;
+    const { id, bookingNumber, bookingDate, deliveryMode  } = booking;
     const date = new Date(bookingDate).toLocaleDateString();
 
 

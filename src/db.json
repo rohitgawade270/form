@@ -18,7 +18,8 @@
         "Customer 1","Customer 2"
       ],
       "customerLocation":[
-        "Mumbai","Pune"
+        {"ID":1,"Name":"Mumbai"},
+        {"ID":1,"Name":"Pune"}
       ],
       "shipper":[
         "Shipper 1","Shipper 2"
