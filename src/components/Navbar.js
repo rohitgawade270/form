@@ -98,7 +98,8 @@ export default function Navbar() {
   };
 
   const data = [
-    { title: "Booking", path:"/" }
+    { title: "Booking", path:"/" },
+    { title: "Form", path:"/form" },
   ];
 
   return (
@@ -126,7 +127,7 @@ export default function Navbar() {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            <Image sx={{ borderRadius: '20px' }} height={33} src='https://teravista.io/assets/img/Teravista%20bg.png' />
+            <Image sx={{ borderRadius: '20px' }} height={33} src='http://teravista.io:85/Teravista.png' />
           </IconButton>
         </DrawerHeader>
         <Divider />

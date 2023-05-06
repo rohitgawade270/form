@@ -10,88 +10,57 @@ import dayjs from 'dayjs'
 import axios from 'axios'
 
 
-export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInformation }) {
+export default function RouteUpdateTab({ id, initialVal }) {
 
-  const [portOne, setPortOne] = useState(initialVal.portOne)
-  const [portTwo, setPortTwo] = useState(initialVal.portTwo)
-  const [portThree, setPortThree] = useState(initialVal.portThree)
 
-  const onPortOneDateValChange = (fieldName) => (value) => {
-    setPortOne({ ...portOne, [fieldName]: value });
-  }
+  const [baseObj, setbaseObj] = useState(initialVal);
 
-  const onPortTwoDateValChange = (fieldName) => (value) => {
-    setPortTwo({ ...portTwo, [fieldName]: value });
-  }
-
-  const onPortThreeDateValChange = (fieldName) => (value) => {
-    setPortThree({ ...portThree, [fieldName]: value });
-  }
-
-  const onPortOneValChange = (e) => {
-    setPortOne({ ...portOne, [e.target.name]: e.target.value });
-  }
-
-  const onPortTwoValChange = (e) => {
-    setPortTwo({ ...portTwo, [e.target.name]: e.target.value });
-  }
-
-  const onPortThreeValChange = (e) => {
-    setPortThree({ ...portThree, [e.target.name]: e.target.value });
-  }
-
-  const onPortOneSerch = () => {
+  const onPortSerch = (portNumber) => {
+    const portName = `port${portNumber}`;
+    const vesselVoyageProp = `${portName}VesselVoyage`;
+    const etaProp = `${portName}ETA`;
+    const etdProp = `${portName}ETD`;
+    const terminalProp = `${portName}Terminal`;
+    const cutOffDateProp = `${portName}CutOffDate`;
     axios({
       method: 'get',
-      url: `http://localhost:3031/routeInofo?vesselVoyage=${portOne.vesselVoyage}`
+      url: `http://localhost:3031/routeInofo?vesselVoyage=${baseObj[vesselVoyageProp]}`
     }).then((response) => {
-     const [{vesselVoyage,eta,etd,terminal,cutOffDate}] = response.data;
-     setPortOne({...portOne,...{vesselVoyage,eta,etd,terminal,cutOffDate}});
-    }
-    ).catch(
-      (error) => {
-        console.log(error)
-      }
-    )
+      const [{ vesselVoyage, eta, etd, terminal, cutOffDate }] = response.data;
+      setbaseObj({
+        ...baseObj, ...{
+          [vesselVoyageProp]: vesselVoyage,
+          [etaProp]: eta,
+          [etdProp]: etd,
+          [terminalProp]: terminal,
+          [cutOffDateProp]: cutOffDate
+        }
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+
+
+
+  const onDateValChange = (fieldName) => (value) => {
+    setbaseObj({ ...baseObj, [fieldName]: value });
   }
 
-  const onPortTwoSerch = () => {
-    axios({
-      method: 'get',
-      url: `http://localhost:3031/routeInofo?vesselVoyage=${portTwo.vesselVoyage}`
-    }).then((response) => {
-     const [{vesselVoyage,eta,etd,terminal,cutOffDate}] = response.data;
-     setPortTwo({...portTwo,...{vesselVoyage,eta,etd,terminal,cutOffDate}});
-    }
-    ).catch(
-      (error) => {
-        console.log(error)
-      }
-    )
+  const onValChange = (e) => {
+    if (e.target.type === 'checkbox')
+      setbaseObj({ ...baseObj, [e.target.name]: e.target.checked === true ? 'Y' : 'N' });
+    else
+      setbaseObj({ ...baseObj, [e.target.name]: e.target.value });
   }
 
-  const onPortThreeSerch = () => {
-    axios({
-      method: 'get',
-      url: `http://localhost:3031/routeInofo?vesselVoyage=${portThree.vesselVoyage}`
-    }).then((response) => {
-     const [{vesselVoyage,eta,etd,terminal,cutOffDate}] = response.data;
-     setPortThree({...portThree,...{vesselVoyage,eta,etd,terminal,cutOffDate}});
-    }
-    ).catch(
-      (error) => {
-        console.log(error)
-      }
-    )
-  }
 
 
   const saveData = () => {
-    const data = { lineDetails, generalInformation, routeUpdate : {portOne,portTwo,portThree} }
     axios({
-      method: 'patch',
+      method: 'put',
       url: `http://localhost:3031/bookings/${id}`,
-      data: data
+      data: baseObj
     }).then((response) => {
       console.log(response.data)
     }).catch((error) => {
@@ -102,22 +71,22 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
 
   return (
     <>
-      <Stack sx={{ direction: 'column', minHeight: '382px', justifyContent: 'space-between' }}>
-        <Box sx={{ marginTop: 2 }}>
+      <Stack sx={{ direction: 'column', minHeight: "465px", justifyContent: 'space-between' }}>
+        <Box>
           <Grid container spacing={2}>
             <Grid lg={4} item>
               <Paper elevation={1} sx={{ p: 1 }} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 1</p>
                 <Grid container spacing={2}  >
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
-                      value={portOne.vesselVoyage}
-                      name="vesselVoyage"
-                      onChange={(evt) => onPortOneValChange(evt)}
+                      value={baseObj.portOneVesselVoyage}
+                      name='portOneVesselVoyage'
+                      onChange={(evt) => onValChange(evt)}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <IconButton onClick={onPortOneSerch}>
+                            <IconButton onClick={() => onPortSerch('One')}>
                               <Search />
                             </IconButton>
                           </InputAdornment>
@@ -125,19 +94,19 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       }}
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
-                      value={portOne.terminal}
-                      name='terminal'
+                      value={baseObj.portOneTerminal}
+                      name='portOneTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
-                        value={dayjs(portOne.cutOffDate)}
-                        name="cutOffDate"
+                        value={dayjs(baseObj.portOneCutOffDate)}
+                        name="portOneCutOffDate"
                         readOnly
                         slotProps={{
                           textField: {
@@ -149,27 +118,27 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
-                      name="eta"
-                      value={portOne.eta}
+                      name="portOneETA"
+                      value={baseObj.portOneETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
-                      name="etd"
-                      value={portOne.eta}
+                      name="portOneETD"
+                      value={baseObj.portOneETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
-                        onChange={onPortOneDateValChange('etaAtDestination')}
-                        value={dayjs(portOne.etaAtDestination)}
-                        name="etaAtDestination"
+                        onChange={onDateValChange('portOneEtaAtDestination')}
+                        value={dayjs(baseObj.portOneEtaAtDestination)}
+                        name="portOneEtaAtDestination"
                         slotProps={{
                           textField: {
                             variant: 'standard',
@@ -187,15 +156,15 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
               <Paper elevation={1} sx={{ p: 1 }} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 2</p>
                 <Grid container spacing={2}  >
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
-                      value={portTwo.vesselVoyage}
-                      name="vesselVoyage"
-                      onChange={(evt) => onPortTwoValChange(evt)}
+                      value={baseObj.portTwoVesselVoyage}
+                      name='portTwoVesselVoyage'
+                      onChange={(evt) => onValChange(evt)}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <IconButton onClick={onPortTwoSerch}>
+                            <IconButton onClick={() => onPortSerch('Two')}>
                               <Search />
                             </IconButton>
                           </InputAdornment>
@@ -203,19 +172,19 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       }}
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
-                      value={portTwo.terminal}
-                      name='terminal'
+                      value={baseObj.portTwoTerminal}
+                      name='portTwoTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
-                        value={dayjs(portTwo.cutOffDate)}
-                        name="cutOffDate"
+                        value={dayjs(baseObj.portTwoCutOffDate)}
+                        name="portTwoCutOffDate"
                         readOnly
                         slotProps={{
                           textField: {
@@ -227,27 +196,27 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
-                      name="eta"
-                      value={portTwo.eta}
+                      name="portTwoETA"
+                      value={baseObj.portTwoETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
-                      name="etd"
-                      value={portTwo.eta}
+                      name="portTwoETD"
+                      value={baseObj.portTwoETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
-                        onChange={onPortTwoDateValChange('etaAtDestination')}
-                        value={dayjs(portTwo.etaAtDestination)}
-                        name="etaAtDestination"
+                        onChange={onDateValChange('portTwoEtaAtDestination')}
+                        value={dayjs(baseObj.portTwoEtaAtDestination)}
+                        name="portTwoEtaAtDestination"
                         slotProps={{
                           textField: {
                             variant: 'standard',
@@ -265,15 +234,15 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
               <Paper elevation={1} sx={{ p: 1 }} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 3</p>
                 <Grid container spacing={2}  >
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
-                      value={portThree.vesselVoyage}
-                      name="vesselVoyage"
-                      onChange={(evt) => onPortThreeValChange(evt)}
+                      value={baseObj.portThreeVesselVoyage}
+                      name='portThreeVesselVoyage'
+                      onChange={(evt) => onValChange(evt)}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <IconButton onClick={onPortThreeSerch}>
+                            <IconButton onClick={() => onPortSerch('Three')}>
                               <Search />
                             </IconButton>
                           </InputAdornment>
@@ -281,19 +250,19 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       }}
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
-                      value={portThree.terminal}
-                      name='terminal'
+                      value={baseObj.portThreeTerminal}
+                      name='portThreeTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
-                        value={dayjs(portThree.cutOffDate)}
-                        name="cutOffDate"
+                        value={dayjs(baseObj.portThreeCutOffDate)}
+                        name="portThreeCutOffDate"
                         readOnly
                         slotProps={{
                           textField: {
@@ -305,27 +274,27 @@ export default function RouteUpdateTab({ id, initialVal, lineDetails, generalInf
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
-                      name="eta"
-                      value={portThree.eta}
+                      name="portThreeETA"
+                      value={baseObj.portThreeETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
-                      name="etd"
-                      value={portThree.eta}
+                      name="portThreeETD"
+                      value={baseObj.portThreeETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={6}>
+                  <Grid item xs={6}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
-                        onChange={onPortThreeDateValChange('etaAtDestination')}
-                        value={dayjs(portThree.etaAtDestination)}
-                        name="etaAtDestination"
+                        onChange={onDateValChange('portThreeEtaAtDestination')}
+                        value={dayjs(baseObj.portThreeEtaAtDestination)}
+                        name="portThreeEtaAtDestination"
                         slotProps={{
                           textField: {
                             variant: 'standard',

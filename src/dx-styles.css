@@ -1,0 +1,101 @@
+body
+.dx-datagrid,.dx-group-panel-message,.dx-page,.dx-texteditor{  
+    font:9.5pt Poppins;  
+} 
+
+.dx-focused{
+    background-color: brown;
+}
+
+.dx-header-row  {
+    color: #222222;
+    font-weight: bold;
+    background-color: rgb(252, 208, 142);
+}
+
+.dx-theme-generic-typography input, .dx-theme-generic-typography textarea {
+    font-family: 'Poppins';
+    font-size: '8pt';
+}
+
+
+
+/* HTML Row coloring */
+/* Cell1, Cell2, Changed are used specifically in Data Comparison Window */
+.tableHead {
+    border-bottom: 2px solid gray;
+    background-color: wheat;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
+}
+
+.cell1 {
+    border-bottom: 1px dotted lightgray;
+    background-color: white;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
+}
+  
+.cell2 {
+    border-bottom: 1px dotted lightgray;
+    background-color: whitesmoke;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
+    border-radius: 20px;
+}
+  
+.changed {
+    background-color: lightyellow;
+    font-weight: bold;
+    border-radius: 20px;
+}
+  
+/* Button Colors */
+.btn-primary {
+    color: white;
+    background-color: #0F6CBD;
+    font-family: 'Poppins';
+}
+
+.btn-secondary {
+    font-family: 'Poppins';
+}
+
+.PageTitle {
+    color: black;
+}
+
+.PageSubTitle {
+    color: darkslategrey;
+    font-size: 9pt;
+}
+
+/* App Background */
+.TopbarNav {
+    background-color: #0F6CBD; 
+}
+
+.AppBackgroundCanvas{
+    background-color: #f0f0f0;
+}
+
+.SidebarBackground{
+    background-color: white;
+}
+
+.EditPageLayout{
+    color:black;        
+}
+
+.dx-treeview-item-content{
+    font-family: 'Poppins';
+    font-size: 9.5pt;
+}
+
+
+.select-box-text {
+    padding-top: 18px; /* Adjust the value as needed */
+    margin-left: 8px;
+  }
+
+  
