@@ -1,5 +1,5 @@
 {
-    "booking":[
+    "booking":
         {
             "BookingId":0,
             "ProductId":0,
@@ -57,7 +57,6 @@
             "ModifiedBy":0,
             "ModifiedDate":"",
             "MarkedForDelete":"N"
-
         }
-    ]
+    
 }

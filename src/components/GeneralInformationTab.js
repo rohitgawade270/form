@@ -46,17 +46,33 @@ export default function GeneralInformationTab({ id, initialVal }) {
         })
     }
 
-    const [selectedValue, setSelectedValue] = useState(null);
-    const handleValueChange = (value) => {
-        setSelectedValue(value);
-    };
+    const [selectedValue, setSelectedValue] = useState("one");
+    const editBoxValueChanged = (e) => {
+        console.log(e)
+        setSelectedValue( e.value);
+      };
+
+    const data1 = [
+        "one", 
+        "two", 
+        "three", 
+        "four", 
+    ]
 
 
 
 
     return (
         <>
-            <div style={{ height: "56vh", overflow: 'auto' }}>
+            <div style={{ height: "61vh", overflow: 'auto' }}>
+                <Stack direction='row' sx={{ marginBottom: 1 }} gap={1} alignItems='center'>
+                    <span style={{ fontWeight: "bold" }}>Booking Type</span>
+                    <DropdownButton id="export-btn" title="Export FCL" size="sm" variant='secondary'>
+                        <Dropdown.Item className='fs-12' href="#/action-1">Action</Dropdown.Item>
+                        <Dropdown.Item className='fs-12' href="#/action-2">Another action</Dropdown.Item>
+                        <Dropdown.Item className='fs-12' href="#/action-3">Something else</Dropdown.Item>
+                    </DropdownButton>
+                </Stack>
                 <Box>
                     <Grid container spacing={1.5}>
                         <Grid item xs={4}>
@@ -288,7 +304,7 @@ export default function GeneralInformationTab({ id, initialVal }) {
                                                 </TextField>
                                             </Grid>
                                             <Grid item xs={12}>
-                                                {/* <TextField select label='Customer Location' variant="standard" fullWidth
+                                                <TextField select label='Customer Location' variant="standard" fullWidth
                                                     value={baseObj.customerLocation}
                                                     onChange={(evt) => onValChange(evt)}
                                                     name='customerLocation'
@@ -298,12 +314,17 @@ export default function GeneralInformationTab({ id, initialVal }) {
                                                             {option}
                                                         </MenuItem>
                                                     ))}
-                                                </TextField> */}
-                                                <SelectBox dataSource={customerLocation}
-                                                    displayExpr="Location"
+                                                </TextField>
+                                            </Grid>
+                                            <Grid item xs={12}>
+                                                <label>Location</label>
+                                                <SelectBox items={data1}
+                                                    stylingMode="underlined"
+                                                    placeholder="Select..."
                                                     searchEnabled={true}
-                                                />
-
+                                                    value={selectedValue}               
+                                                    acceptCustomValue={true}
+                                                    onValueChanged={editBoxValueChanged} />
                                             </Grid>
                                             <Grid item xs={12}>
                                                 <TextField select label='Shipper' variant="standard" fullWidth
@@ -481,14 +502,8 @@ export default function GeneralInformationTab({ id, initialVal }) {
                     </Grid>
                 </Box >
             </div>
-
-            <Box sx={{ marginTop: 2 }}>
+            <Box sx={{ marginTop: 1.4 }}>
                 <Stack direction='row' flexWrap='wrap' gap={1} >
-                    <DropdownButton id="export-btn" title="Export FCL" size="sm" variant='secondary'>
-                        <Dropdown.Item className='fs-12' href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item className='fs-12' href="#/action-2">Another action</Dropdown.Item>
-                        <Dropdown.Item className='fs-12' href="#/action-3">Something else</Dropdown.Item>
-                    </DropdownButton>
                     <Button variant="primary" size='sm' onClick={saveData} >  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
                     <Button variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save as New</Button>
                     <Button variant="primary" size='sm'>  <i className="bi bi-x-square paddingRight bootstrapIcon" ></i>Cancel</Button>
