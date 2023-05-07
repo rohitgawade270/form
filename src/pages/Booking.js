@@ -163,14 +163,15 @@ export default function Booking() {
 
 
 
+
   return (
     <>
       {
         Object.keys(booking).length > 0 ?
-          <Box sx={{ marginTop: 9, fontFamily: 'poppins', }}>
+          <Box sx={{ marginTop: 7, fontFamily: 'poppins', }}>
             <Box>
               {/* for booking summary */}
-              <Paper elevation={5} sx={{ p: '20px', height: '86vh' }}>
+              <Paper elevation={5} sx={{ p: '20px', height: '88vh' }}>
                 <Grid container spacing={2}>
                   <Grid lg={3} item>
                     <h4>Booking Summary</h4>
@@ -186,17 +187,15 @@ export default function Booking() {
                    })}
                  </Grid> */}
                     <Grid container spacing={2}>
-                      <Grid item xs={4}>
-                        <Paper elevation={1} sx={{ p: 1 }}>
+                      <Grid item xs={3}>
+                        <Paper elevation={1} sx={{ p: 1,position:'relative',width:"14vw", height:"10vh" }}>
                           <p style={{ fontWeight: 'bold', fontSize: '13pt', marginBottom: 0 }}>Aniket Chate</p>
-                          <Stack direction='row' justifyContent='space-between'>
-                            <Typography variant='p' style={{ fontSize: '8pt', color: 'gray' }} component='p'>Booking: <span style={{ color: 'black', fontSize: '10pt' }}>6535378</span></Typography>
-                            <Typography variant='p' style={{ fontSize: '8pt', color: 'gray' }} component='p'>Booking Date: <span style={{ color: 'black', fontSize: '10pt' }}>05/05/2023</span></Typography>
-                          </Stack>
+                            <Typography variant='p' style={{ fontSize: '8pt', color: 'gray' }} component='p'>Booking No : <span style={{ color: 'black', fontSize: '10pt' }}>6535378</span></Typography>
+                            <Typography variant='p' style={{ fontSize: '8pt', color: 'gray' }} component='p'>Booking Date : <span style={{ color: 'black', fontSize: '10pt' }}>05/05/2023</span></Typography>
                         </Paper>
                       </Grid>
-                      <Grid item xs={8}>
-                        <Paper elevation={1} sx={{ p: 1 }}>
+                      <Grid item xs={9}>
+                        <Paper elevation={1} sx={{ p: 1,position:"relative",width:"44vw",height:"10vh" }}>
                           <Grid container>
                             <Grid item xs={5}>
                               <Stack width='100%'>
@@ -239,7 +238,7 @@ export default function Booking() {
                       <Tab accessKey='r' label="Route Update" {...a11yProps(2)} />
                     </Tabs>
                   </Box>
-                  <TabPanel  value={value} index={0}>
+                  <TabPanel className="hello" value={value} index={0}>
                     <GeneralInformationTab id={booking.id} initialVal={booking} />
                   </TabPanel>
                   <TabPanel sx={{ p: 0 }} value={value} index={1}>

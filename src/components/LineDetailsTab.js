@@ -44,21 +44,21 @@ export default function LineDetailsTab({ id, initialVal }) {
   return (
 
     <>
-      <Stack sx={{ direction: 'column', minHeight: "465px", justifyContent: 'space-between' }}>
+      <div style={{ height: "61vh", overflow: 'auto' }}>
         <Box >
           <Grid container spacing={2}>
             <Grid lg={4} xs={12} item>
-              <Paper elevation={1} sx={{ p: 1 }}>
+              <Paper elevation={1} sx={{ p: 1 ,marginLeft:1,marginTop:1}}>
                 <p style={{ fontWeight: 'bold' }}>Booking with Line</p>
                 <Grid container spacing={2}  >
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='standard' fullWidth label="Line Booking Number" size="small"
                       value={baseObj.lineBookingNumber}
                       name="lineBookingNumber"
                       onChange={(evt) => onValChange(evt)}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Line Booking Date"
@@ -75,7 +75,7 @@ export default function LineDetailsTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Line Booking Validity"
@@ -92,7 +92,7 @@ export default function LineDetailsTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="SI cut-off Date"
@@ -109,14 +109,14 @@ export default function LineDetailsTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField fullWidth variant='standard' label="Service Contract Number" size="small"
                       value={baseObj.serviceContractNumber}
                       name="serviceContractNumber"
                       onChange={(evt) => onValChange(evt)}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField select label='Pickup Point' variant="standard" fullWidth
                       value={baseObj.pickupPoint}
                       name='pickupPoint'
@@ -133,10 +133,10 @@ export default function LineDetailsTab({ id, initialVal }) {
               </Paper>
             </Grid>
             <Grid lg={4} xs={12} item>
-              <Paper elevation={1} sx={{ p: 1 }}>
+              <Paper elevation={1} sx={{ p: 1,marginTop:1 }}>
                 <p style={{ fontWeight: 'bold' }}>Vessel Information</p>
                 <Grid container spacing={2}  >
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
                       value={baseObj.vesselVoyage}
                       name="vesselVoyage"
@@ -152,14 +152,14 @@ export default function LineDetailsTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
                       value={baseObj.terminal}
                       name="terminal"
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
@@ -176,21 +176,21 @@ export default function LineDetailsTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
                       value={baseObj.eta}
                       name="eta"
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
                       value={baseObj.etd}
                       name="etd"
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
@@ -211,10 +211,10 @@ export default function LineDetailsTab({ id, initialVal }) {
               </Paper>
             </Grid>
             <Grid lg={4} xs={12} item>
-              <Paper elevation={1} sx={{ p: 1 }}>
+              <Paper elevation={1} sx={{ p: 1,marginTop:1,marginRight:1 }}>
                 <p style={{ fontWeight: 'bold' }}>Transhipment Ports</p>
                 <Grid container spacing={2}  >
-                  <Grid item sm={4} xs={6}>
+                  <Grid item sm={4} xs={12}>
                     <TextField name="portOne" variant='standard' label="Port 1" size="small" fullWidth
                       value={baseObj.portOne}
                       onChange={(evt) => onValChange(evt)}
@@ -229,7 +229,7 @@ export default function LineDetailsTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item sm={4} xs={6}>
+                  <Grid item sm={4} xs={12}>
                     <TextField variant='standard' label="Port 2" size="small" fullWidth
                       value={baseObj.portTwo}
                       onChange={(evt) => onValChange(evt)}
@@ -245,7 +245,7 @@ export default function LineDetailsTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item sm={4} xs={6} alignSelf='center'>
+                  <Grid item sm={4} xs={12} alignSelf='center'>
                     <TextField variant='standard' label="Port 3" size="small" fullWidth
                       value={baseObj.portThree}
                       onChange={(evt) => onValChange(evt)}
@@ -266,12 +266,10 @@ export default function LineDetailsTab({ id, initialVal }) {
             </Grid>
           </Grid>
         </Box>
-        <Box sx={{ marginTop: 2 }}>
+        </div>
+        <Box sx={{ marginTop: 1.4 }}>
           <Button onClick={saveData} variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
         </Box>
-      </Stack>
-
-
     </>
   );
 }

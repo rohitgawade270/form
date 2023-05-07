@@ -7,6 +7,7 @@ import Form from './pages/Form';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import 'devextreme/dist/css/dx.light.css';
+import './dx-styles.css'
 
 const theme = createTheme({
   typography: {

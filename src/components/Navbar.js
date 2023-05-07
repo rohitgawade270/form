@@ -161,7 +161,7 @@ export default function Navbar() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor: '#f0f0f0', minHeight:'100vh' }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor: '#f0f0f0' }}>
         <Outlet />
       </Box>
     </Box>

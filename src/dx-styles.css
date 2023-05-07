@@ -98,4 +98,7 @@ body
     margin-left: 8px;
   }
 
-  
+/* For overriding Tabpenel's padding */
+.css-19kzrtu {
+    padding: 7px !important;
+}

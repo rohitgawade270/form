@@ -71,14 +71,14 @@ export default function RouteUpdateTab({ id, initialVal }) {
 
   return (
     <>
-      <Stack sx={{ direction: 'column', minHeight: "465px", justifyContent: 'space-between' }}>
+      <div style={{ height: "61vh", overflow: 'auto' }}>
         <Box>
           <Grid container spacing={2}>
             <Grid lg={4} item>
-              <Paper elevation={1} sx={{ p: 1 }} >
+              <Paper elevation={1} sx={{ p: 1,marginLeft:1,marginTop:1 }} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 1</p>
                 <Grid container spacing={2}  >
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
                       value={baseObj.portOneVesselVoyage}
                       name='portOneVesselVoyage'
@@ -94,14 +94,14 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
                       value={baseObj.portOneTerminal}
                       name='portOneTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
@@ -118,21 +118,21 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
                       name="portOneETA"
                       value={baseObj.portOneETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
                       name="portOneETD"
                       value={baseObj.portOneETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
@@ -153,10 +153,10 @@ export default function RouteUpdateTab({ id, initialVal }) {
               </Paper>
             </Grid>
             <Grid lg={4} item>
-              <Paper elevation={1} sx={{ p: 1 }} >
+              <Paper elevation={1} sx={{ p: 1,marginTop:1 }} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 2</p>
                 <Grid container spacing={2}  >
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
                       value={baseObj.portTwoVesselVoyage}
                       name='portTwoVesselVoyage'
@@ -172,14 +172,14 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
                       value={baseObj.portTwoTerminal}
                       name='portTwoTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
@@ -196,21 +196,21 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
                       name="portTwoETA"
                       value={baseObj.portTwoETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
                       name="portTwoETD"
                       value={baseObj.portTwoETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
@@ -231,10 +231,10 @@ export default function RouteUpdateTab({ id, initialVal }) {
               </Paper>
             </Grid>
             <Grid lg={4} item>
-              <Paper elevation={1} sx={{ p: 1 }} >
+              <Paper elevation={1} sx={{ p: 1 , marginRight:1,marginTop:1}} >
                 <p style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Port 3</p>
                 <Grid container spacing={2}  >
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='standard' label="Vessel Voyage" size="small" fullWidth
                       value={baseObj.portThreeVesselVoyage}
                       name='portThreeVesselVoyage'
@@ -250,14 +250,14 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="Terminal" size="small"
                       value={baseObj.portThreeTerminal}
                       name='portThreeTerminal'
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="Cut-off Date"
@@ -274,21 +274,21 @@ export default function RouteUpdateTab({ id, initialVal }) {
                       />
                     </LocalizationProvider>
                   </Grid>
-                  <Grid item xs={6} alignSelf='end'>
+                  <Grid item xs={12} alignSelf='end'>
                     <TextField variant='filled' fullWidth label="E.T.A" size="small"
                       name="portThreeETA"
                       value={baseObj.portThreeETA}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <TextField variant='filled' fullWidth label="E.T.D" size="small"
                       name="portThreeETD"
                       value={baseObj.portThreeETD}
                       readOnly
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={12}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
                         label="E.T.A. at Destination"
@@ -310,10 +310,10 @@ export default function RouteUpdateTab({ id, initialVal }) {
             </Grid>
           </Grid>
         </Box >
-        <Box sx={{ marginTop: 2 }}>
+        </div>
+        <Box sx={{ marginTop: 1.4 }}>
           <Button onClick={saveData} variant="primary" size='sm'>  <i className="bi bi-save paddingRight bootstrapIcon" ></i>Save</Button>
         </Box>
-      </Stack>
     </>
   )
 }

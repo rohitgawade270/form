@@ -186,7 +186,7 @@ export default function Form() {
                                                 <Grid item md={6} xs={6} alignSelf="end">
                                                     <FormControl>
                                                         <FormControlLabel
-                                                            control={<Checkbox checked={baseObj.Active == "Y"} />}
+                                                            control={<Checkbox checked={baseObj.Active === "Y"} />}
                                                             value={baseObj.active}
                                                             onChange={(evt) => onValChange(evt)}
                                                             name="Active"
@@ -234,7 +234,7 @@ export default function Form() {
                                                             <Stack spacing>
                                                                 <FormControl >
                                                                     <FormControlLabel sx={{ p: 0 }}
-                                                                        control={<Checkbox checked={baseObj.IsCustomer == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsCustomer === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsCustomer"
                                                                         label="Customer"
@@ -242,7 +242,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsCha == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsCha === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name='IsCha'
                                                                         label="CHA"
@@ -250,14 +250,14 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsConsignee == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsConsignee === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsConsignee"
                                                                         label="Consignee" />
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsForwarder == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsForwarder === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsForwarder"
                                                                         label="Forwarder"
@@ -265,7 +265,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsLine == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsLine === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsLine"
                                                                         label="Line"
@@ -273,7 +273,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsOsa == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsOsa === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsOsa"
                                                                         label="OSA"
@@ -285,7 +285,7 @@ export default function Form() {
                                                             <Stack>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsServiceProvider == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsServiceProvider === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsServiceProvider"
                                                                         label="Service Provider"
@@ -293,7 +293,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsShipper == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsShipper === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsShipper"
                                                                         label="Shipper"
@@ -301,7 +301,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsRebateParty == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsRebateParty === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsRebateParty"
                                                                         label="Rebate Party"
@@ -309,7 +309,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsNotifyParty == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsNotifyParty === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsNotifyParty"
                                                                         label="Notify Party"
@@ -317,7 +317,7 @@ export default function Form() {
                                                                 </FormControl>
                                                                 <FormControl>
                                                                     <FormControlLabel
-                                                                        control={<Checkbox checked={baseObj.IsBillingParty == "Y"} />}
+                                                                        control={<Checkbox checked={baseObj.IsBillingParty === "Y"} />}
                                                                         onChange={(evt) => onValChange(evt)}
                                                                         name="IsBillingParty"
                                                                         label="Billing Party"
@@ -332,7 +332,7 @@ export default function Form() {
                                                     <Stack>
                                                         <FormControl variant="standard">
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.TdsExemptedFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.TdsExemptedFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="TdsExemptedFlag"
                                                                 label="TDS Exempted"
@@ -340,7 +340,7 @@ export default function Form() {
                                                         </FormControl>
                                                         <FormControl>
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.EconomicFreeZoneFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.EconomicFreeZoneFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="EconomicFreeZoneFlag"
                                                                 label="Economic Free Zone"
@@ -348,7 +348,7 @@ export default function Form() {
                                                         </FormControl>
                                                         <FormControl>
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.PdcAcceptableFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.PdcAcceptableFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="PdcAcceptableFlag"
                                                                 label="PDC Acceptable"
@@ -356,7 +356,7 @@ export default function Form() {
                                                         </FormControl>
                                                         <FormControl>
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.RebateFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.RebateFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="RebateFlag"
                                                                 label="Rebate"
@@ -364,7 +364,7 @@ export default function Form() {
                                                         </FormControl>
                                                         <FormControl>
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.SpecialEconomicZoneFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.SpecialEconomicZoneFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="SpecialEconomicZoneFlag"
                                                                 label="Special Economic Zone"
@@ -372,7 +372,7 @@ export default function Form() {
                                                         </FormControl>
                                                         <FormControl>
                                                             <FormControlLabel
-                                                                control={<Checkbox checked={baseObj.LetterUndertakingFlag == "Y"} />}
+                                                                control={<Checkbox checked={baseObj.LetterUndertakingFlag === "Y"} />}
                                                                 onChange={(evt) => onValChange(evt)}
                                                                 name="LetterUndertakingFlag"
                                                                 label="Letter Undertaking"
