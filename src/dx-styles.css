@@ -94,9 +94,22 @@ body
 
 
 .select-box-text {
-    padding-top: 18px; /* Adjust the value as needed */
-    margin-left: 8px;
+    /* padding-top: 6px; /* Adjust the value as needed */
+    /* cursor: pointer;
+    height: 43px;
+    padding-top: 6px;
+    background-color: red;  */
   }
+
+.dx-dropdowneditor ,.dx-dropdowneditor-field-clickable , .dx-texteditor-input , .dx-selectbox {
+    height: 45px !important;
+    padding-bottom: 0 !important;
+
+}
+
+
+
+  
 
 /* For overriding Tabpenel's padding */
 .css-19kzrtu {

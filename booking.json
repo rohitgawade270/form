@@ -15,7 +15,7 @@
             "CustomerSiteId":0,
             "SalesPersonId":0,
             "ShipperId":0,
-            "ConsianeeId":0,
+            "ConsigneeId":0,
             "ChaId":0,
             "OsaId":0,
             "LineBlRequiredFlag":"Y",

@@ -98,8 +98,8 @@ export default function Navbar() {
   };
 
   const data = [
-    { title: "Booking", path:"/" },
-    { title: "Form", path:"/form" },
+    { title: "Form", path:"/" },
+    { title: "Demo", path:"/demo" },
   ];
 
   return (
@@ -161,7 +161,7 @@ export default function Navbar() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor: '#f0f0f0' }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 2, backgroundColor: '#f0f0f0',height:'100vh' }}>
         <Outlet />
       </Box>
     </Box>
